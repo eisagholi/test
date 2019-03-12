@@ -26,16 +26,19 @@
     </Networking>
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
-    <WebUI>http://[IP]:[PORT:8080]</WebUI>
+    <WebUI>http://[IP]</WebUI>
     <BaseImage>lsiobase/mono:xenial</BaseImage>
     <Config Name="AppData Config Path" Target="/etc/traefik" Default="/mnt/user/appdata/traefik" Mode="rw" Description="Container Path: /etc/traefik" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/traefik</Config>
     <Config Name="Docker Path" Target="/var/run/docker.sock" Default="" Mode="ro" Description="Container Path: /var/run/docker.sock" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
     <Config Name="CLOUDFLARE EMAIL" Target="CLOUDFLARE_EMAIL" Default="" Mode="" Description="Container Variable: CLOUDFLARE_EMAIL" Type="Variable" Display="always" Required="false" Mask="false"></Config>
     <Config Name="CLOUDFLARE API KEY" Target="CLOUDFLARE_API_KEY" Default="" Mode="" Description="Container Variable: CLOUDFLARE_API_KEY" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="443:443" Target="443" Default="443" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always" Required="false" Mask="false">443</Config>
+    <Config Name="80:80" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">80</Config>
     <Config Name="http auth file" Target="traefik.frontend.auth.basic.usersFile" Default="/shared/.htpasswd" Mode="" Description="Container Label: traefik.frontend.auth.basic.usersFile" Type="Label" Display="always" Required="false" Mask="false">/shared/.htpasswd</Config>
     <Config Name="traefik enable" Target="traefik.enable" Default="" Mode="" Description="Container Variable: traefik.enable" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
     <Config Name="traefik backend" Target="traefik.backend" Default="" Mode="" Description="Container Label: traefik.backend" Type="Label" Display="advanced" Required="false" Mask="false">traefik</Config>
-    <Config Name="traefik port" Target="traefik.port" Default="" Mode="" Description="Container Label: traefik.port" Type="Label" Display="advanced" Required="false" Mask="false">8686</Config>
+    <Config Name="traefik frontend" Target="traefik.frontend" Default="" Mode="" Description="Container Label: traefik.frontend" Type="Label" Display="advanced" Required="false" Mask="false">traefik</Config>
+    <Config Name="traefik port" Target="traefik.port" Default="" Mode="" Description="Container Label: traefik.port" Type="Label" Display="advanced" Required="false" Mask="false">8080</Config>
     <Config Name="traefik network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="advanced" Required="false" Mask="false">traefik</Config>
     <Config Name="traefik frontend rule" Target="traefik.frontend.rule" Default="" Mode="" Description="Container Label: traefik.frontend.rule" Type="Label" Display="advanced" Required="false" Mask="false">Host:private.domain</Config>
     <Config Name="traefik.frontend.headers.SSLRedirect" Target="traefik.frontend.headers.SSLRedirect" Default="" Mode="" Description="Container Label: traefik.frontend.headers.SSLRedirect" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
