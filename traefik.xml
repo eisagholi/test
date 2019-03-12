@@ -8,7 +8,7 @@
     <Overview>Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.</Overview>
     <Repository>traefik:latest</Repository>
     <Registry>https://hub.docker.com/_/traefik</Registry>
-    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/traefik.png</Icon>
+    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/traefik_icon.png</Icon>
     <Networking>
         <Mode>bridge</Mode>
         <Publish>
