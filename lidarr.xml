@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
-    <TemplateURL>https://raw.githubusercontent.com/eisagholi/docker-templates/master/lidarr.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/eisagholi/test/master/lidarr.xml</TemplateURL>
     <Beta>False</Beta>
     <Category>Downloaders: MediaApp:Music</Category>
     <Name>lidarr</Name>
