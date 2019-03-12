@@ -60,8 +60,18 @@
             <Mode />
         </Label>
         <Label>
+            <Value>10.0.0.0/8,172.16.0.0/12,192.168.0.0/16</Value>
+            <Name>traefik.frontend.whiteList.sourceRange</Name>
+            <Mode />
+        </Label>
+        <Label>
             <Value>traefik</Value>
             <Name>traefik.docker.network</Name>
+            <Mode />
+        </Label>
+        <Label>
+            <Value>domain</Value>
+            <Name>traefik.frontend.headers.SSLHost</Name>
             <Mode />
         </Label>
         <Label>
@@ -95,11 +105,6 @@
             <Mode />
         </Label>
         <Label>
-            <Value>domain</Value>
-            <Name>traefik.frontend.headers.SSLHost</Name>
-            <Mode />
-        </Label>
-        <Label>
             <Value>true</Value>
             <Name>traefik.frontend.headers.STSIncludeSubdomains</Name>
             <Mode />
@@ -108,15 +113,8 @@
             <Value>true</Value>
             <Name>traefik.frontend.headers.STSPreload</Name>
             <Mode />
-        </Label>
-        <Label>
-            <Value>10.0.0.0/8,172.16.0.0/12,192.168.0.0/16</Value>
-            <Name>traefik.frontend.whiteList.sourceRange</Name>
-            <Mode />
-        </Label>
+        </Label>   
     </Labels>
-    <Config Name="Downloads Host Path" Target="/downloads" Default="" Mode="rw" Description="Container Path: /downloads/completed/Music" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/usenet/completed/Music</Config>
-    <Config Name="Media Host Path" Target="/music" Default="" Mode="rw" Description="Container Path: /music" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/music</Config>
     <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
     <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
     <Config Name="traefik enable" Target="traefik.enable" Default="" Mode="" Description="Container Variable: traefik.enable" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
@@ -133,5 +131,4 @@
     <Config Name="traefik.frontend.headers.STSIncludeSubdomains" Target="traefik.frontend.headers.STSIncludeSubdomains" Default="" Mode="" Description="Container Label: traefik.frontend.headers.STSIncludeSubdomains" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
     <Config Name="traefik.frontend.headers.STSPreload" Target="traefik.frontend.headers.STSPreload" Default="" Mode="" Description="Container Label: traefik.frontend.headers.STSPreload" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
     <Config Name="traefik.frontend.whiteList.sourceRange" Target="traefik.frontend.whiteList.sourceRange" Default="" Mode="" Description="Container Label: traefik.frontend.whiteList.sourceRange" Type="Label" Display="advanced" Required="false" Mask="false">10.0.0.0/8,172.16.0.0/12,192.168.0.0/16</Config>
-    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/lidarr" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/lidarr</Config>
 </Container>
