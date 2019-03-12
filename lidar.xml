@@ -14,7 +14,6 @@
     <BindTime>true</BindTime>
     <WebUI>http://[IP]</WebUI>
     <Network>bridge</Network>
-    <BaseImage>lsiobase/mono:xenial</BaseImage>
     <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/lidarr" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/lidarr</Config>
     <Config Name="Downloads Host Path" Target="/downloads" Default="" Mode="rw" Description="Container Path: /downloads/completed/Music" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/usenet/completed/Music</Config>
     <Config Name="Media Host Path" Target="/music" Default="" Mode="rw" Description="Container Path: /music" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/music</Config>
