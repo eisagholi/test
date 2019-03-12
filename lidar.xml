@@ -16,33 +16,6 @@
     <WebUI>http://[IP]:[PORT:8686]</WebUI>
     <Network>docker_default</Network>
     <BaseImage>lsiobase/mono:xenial</BaseImage>
-    <Data>
-        <Volume>
-            <HostDir>/mnt/user/appdata/lidarr</HostDir>
-            <ContainerDir>/config</ContainerDir>
-            <Mode>rw</Mode>
-        </Volume>
-        <Volume>
-            <HostDir>/mnt/user/downloads/media_postprocessing/Music</HostDir>
-            <ContainerDir>/downloads/completed/Music</ContainerDir>
-            <Mode>rw</Mode>
-        </Volume>
-        <Volume>
-            <HostDir>/mnt/user/media/music</HostDir>
-            <ContainerDir>/music</ContainerDir>
-            <Mode>rw</Mode>
-        </Volume>
-    </Data>
-    <Environment>
-        <Variable>
-            <Value>99</Value>
-            <Name>PUID</Name>
-        </Variable>
-        <Variable>
-            <Value>100</Value>
-            <Name>PGID</Name>
-        </Variable>
-    </Environment>
     <Labels>
         <Label>
             <Value>true</Value>
@@ -115,6 +88,9 @@
             <Mode />
         </Label>   
     </Labels>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/lidarr" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/lidarr</Config>
+    <Config Name="Downloads Host Path" Target="/downloads" Default="" Mode="rw" Description="Container Path: /downloads/completed/Music" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/usenet/completed/Music</Config>
+    <Config Name="Media Host Path" Target="/music" Default="" Mode="rw" Description="Container Path: /music" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/music</Config>
     <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
     <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
     <Config Name="traefik enable" Target="traefik.enable" Default="" Mode="" Description="Container Variable: traefik.enable" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
