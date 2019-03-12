@@ -5,7 +5,6 @@
     <Category>Downloaders: MediaApp:Music</Category>
     <Name>lidarr</Name>
     <Support>https://github.com/eisagholi/docker-templates/issues</Support>
-    <Project>https://github.com/lidarr/Lidarr</Project>
     <Overview>Lidarr is a music collection manager for Usenet and BitTorrent users.</Overview>
     <Repository>linuxserver/lidarr</Repository>
     <Registry>https://hub.docker.com/r/linuxserver/lidarr/</Registry>
@@ -24,12 +23,12 @@
     <Config Name="traefik port" Target="traefik.port" Default="" Mode="" Description="Container Label: traefik.port" Type="Label" Display="advanced" Required="false" Mask="false">8686</Config>
     <Config Name="traefik network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="advanced" Required="false" Mask="false">bridge</Config>
     <Config Name="traefik frontend rule" Target="traefik.frontend.rule" Default="" Mode="" Description="Container Label: traefik.frontend.rule" Type="Label" Display="advanced" Required="false" Mask="false">Host:lidarr.domain</Config>
+    <Config Name="traefik.frontend.headers.SSLHost" Target="traefik.frontend.headers.SSLHost" Default="" Mode="" Description="Container Label: traefik.frontend.headers.SSLHost" Type="Label" Display="advanced" Required="false" Mask="false">domain</Config>
     <Config Name="traefik.frontend.headers.SSLRedirect" Target="traefik.frontend.headers.SSLRedirect" Default="" Mode="" Description="Container Label: traefik.frontend.headers.SSLRedirect" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
     <Config Name="traefik.frontend.headers.STSSeconds" Target="traefik.frontend.headers.STSSeconds" Default="" Mode="" Description="Container Label: traefik.frontend.headers.STSSeconds" Type="Label" Display="advanced" Required="false" Mask="false">315360000</Config>
     <Config Name="traefik.frontend.headers.browserXSSFilter" Target="traefik.frontend.headers.browserXSSFilter" Default="" Mode="" Description="Container Label: traefik.frontend.headers.browserXSSFilter" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
     <Config Name="traefik.frontend.headers.contentTypeNosniff" Target="traefik.frontend.headers.contentTypeNosniff" Default="" Mode="" Description="Container Label: traefik.frontend.headers.contentTypeNosniff" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
     <Config Name="traefik.frontend.headers.forceSTSHeader" Target="traefik.frontend.headers.forceSTSHeader" Default="" Mode="" Description="Container Label: traefik.frontend.headers.forceSTSHeader" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
-    <Config Name="traefik.frontend.headers.SSLHost" Target="traefik.frontend.headers.SSLHost" Default="" Mode="" Description="Container Label: traefik.frontend.headers.SSLHost" Type="Label" Display="advanced" Required="false" Mask="false">domain</Config>
     <Config Name="traefik.frontend.headers.STSIncludeSubdomains" Target="traefik.frontend.headers.STSIncludeSubdomains" Default="" Mode="" Description="Container Label: traefik.frontend.headers.STSIncludeSubdomains" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
     <Config Name="traefik.frontend.headers.STSPreload" Target="traefik.frontend.headers.STSPreload" Default="" Mode="" Description="Container Label: traefik.frontend.headers.STSPreload" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
     <Config Name="traefik.frontend.whiteList.sourceRange" Target="traefik.frontend.whiteList.sourceRange" Default="" Mode="" Description="Container Label: traefik.frontend.whiteList.sourceRange" Type="Label" Display="advanced" Required="false" Mask="false">10.0.0.0/8,172.16.0.0/12,192.168.0.0/16</Config>
