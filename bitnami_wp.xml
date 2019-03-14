@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <TemplateURL>https://raw.githubusercontent.com/eisagholi/test/master/bitnami_wp.xml</TemplateURL>
+    <Beta>False</Beta>
+    <Category>Network:Web</Category>
+    <Name>bitnami_wp</Name>
+    <Support>https://github.com/eisagholi/docker-templates/issues</Support>
+    <Overview>WordPress is one of the most versatile open source content management systems on the market.</Overview>
+    <Registry>https://hub.docker.com/r/bitnami/wordpress/</Registry>
+    <Repository>bitnami/wordpress</Repository>
+    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/wordpress_icon.png</Icon>
+    <Privileged>false</Privileged>
+    <BindTime>true</BindTime>
+    <WebUI></WebUI>
+    <Network>bridge</Network>
+    <Config Name="AppData Config Path" Target="/bitnami" Default="/mnt/user/appdata/wordpress" Mode="rw" Description="Container Path: /bitnami" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/wordpress</Config>
+    <Config Name="Hostname of Database" Target="MARIADB_HOST" Default="" Mode="" Description="Container Variable: MARIADB_HOST" Type="Variable" Display="always" Required="false" Mask="false">database hostname/ip</Config>
+    <Config Name="Database Port" Target="MARIADB_PORT_NUMBER" Default="3306" Mode="" Description="Container Variable: MARIADB_PORT_NUMBER" Type="Variable" Display="always" Required="false" Mask="false">3306</Config>
+    <Config Name="WP Database User" Target="WORDPRESS_DATABASE_USER" Default="" Mode="" Description="Container Variable: WORDPRESS_DATABASE_USER" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="WP Database Name" Target="WORDPRESS_DATABASE_NAME" Default="" Mode="" Description="Container Variable: WORDPRESS_DATABASE_NAME" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="WP Database Password" Target="WORDPRESS_DATABASE_PASSWORD" Default="" Mode="" Description="Container Variable: WORDPRESS_DATABASE_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="WP Admin Username" Target="WORDPRESS_USERNAME" Default="" Mode="" Description="Container Variable: WORDPRESS_USERNAME" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="WP Admin Password" Target="WORDPRESS_PASSWORD" Default="" Mode="" Description="Container Variable: WORDPRESS_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="WP Admin Email" Target="WORDPRESS_EMAIL" Default="" Mode="" Description="Container Variable: WORDPRESS_EMAIL" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="WP Admin Firstname" Target="WORDPRESS_FIRST_NAME" Default="" Mode="" Description="Container Variable: WORDPRESS_FIRST_NAME" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="WP Admin Lastname" Target="WORDPRESS_LAST_NAME" Default="" Mode="" Description="Container Variable: WORDPRESS_LAST_NAME" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="WP Blog Name" Target="WORDPRESS_BLOG_NAME" Default="" Mode="" Description="Container Variable: WORDPRESS_BLOG_NAME" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="traefik enable" Target="traefik.enable" Default="" Mode="" Description="Container Variable: traefik.enable" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
+    <Config Name="traefik backend" Target="traefik.backend" Default="" Mode="" Description="Container Label: traefik.backend" Type="Label" Display="advanced" Required="false" Mask="false">wp</Config>
+    <Config Name="traefik port" Target="traefik.port" Default="" Mode="" Description="Container Label: traefik.port" Type="Label" Display="advanced" Required="false" Mask="false">80</Config>
+    <Config Name="traefik network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="advanced" Required="false" Mask="false">bridge</Config>
+    <Config Name="traefik frontend rule" Target="traefik.frontend.rule" Default="" Mode="" Description="Container Label: traefik.frontend.rule" Type="Label" Display="advanced" Required="false" Mask="false">Host:wp.domain</Config>
+    <Config Name="traefik.frontend.headers.SSLHost" Target="traefik.frontend.headers.SSLHost" Default="" Mode="" Description="Container Label: traefik.frontend.headers.SSLHost" Type="Label" Display="advanced" Required="false" Mask="false">domain</Config>
+    <Config Name="traefik.frontend.headers.SSLRedirect" Target="traefik.frontend.headers.SSLRedirect" Default="" Mode="" Description="Container Label: traefik.frontend.headers.SSLRedirect" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.frontend.headers.STSSeconds" Target="traefik.frontend.headers.STSSeconds" Default="" Mode="" Description="Container Label: traefik.frontend.headers.STSSeconds" Type="Label" Display="advanced" Required="false" Mask="false">315360000</Config>
+    <Config Name="traefik.frontend.headers.browserXSSFilter" Target="traefik.frontend.headers.browserXSSFilter" Default="" Mode="" Description="Container Label: traefik.frontend.headers.browserXSSFilter" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.frontend.headers.contentTypeNosniff" Target="traefik.frontend.headers.contentTypeNosniff" Default="" Mode="" Description="Container Label: traefik.frontend.headers.contentTypeNosniff" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.frontend.headers.forceSTSHeader" Target="traefik.frontend.headers.forceSTSHeader" Default="" Mode="" Description="Container Label: traefik.frontend.headers.forceSTSHeader" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.frontend.headers.STSIncludeSubdomains" Target="traefik.frontend.headers.STSIncludeSubdomains" Default="" Mode="" Description="Container Label: traefik.frontend.headers.STSIncludeSubdomains" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.frontend.headers.STSPreload" Target="traefik.frontend.headers.STSPreload" Default="" Mode="" Description="Container Label: traefik.frontend.headers.STSPreload" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.frontend.whiteList.sourceRange" Target="traefik.frontend.whiteList.sourceRange" Default="" Mode="" Description="Container Label: traefik.frontend.whiteList.sourceRange" Type="Label" Display="advanced" Required="false" Mask="false">10.0.0.0/8,172.16.0.0/12,192.168.0.0/16</Config>
+</Container>
