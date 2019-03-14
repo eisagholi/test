@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <TemplateURL>https://raw.githubusercontent.com/eisagholi/test/master/openvpn-as.xml</TemplateURL>
+    <Beta>False</Beta>
+    <Category>Network:Other</Category>
+    <Name>openvpn-as</Name>
+    <Support>https://github.com/eisagholi/docker-templates/issues</Support>
+    <Overview>OpenVPN Access Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments.</Overview>
+    <Registry>https://hub.docker.com/r/linuxserver/openvpn-as/</Registry>
+    <Repository>linuxserver/openvpn-as</Repository>
+    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/openvpn-as_icon.png</Icon>
+    <Privileged>true</Privileged>
+    <BindTime>true</BindTime>
+    <WebUI>https://[IP]:[PORT:943]/</WebUI>
+    <Networking>
+        <Mode>host</Mode>
+        <Publish>
+            <Port>
+                <HostPort>943</HostPort>
+                <ContainerPort>943</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+            <Port>
+                <HostPort>9443</HostPort>
+                <ContainerPort>9443</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+            <Port>
+                <HostPort>1194</HostPort>
+                <ContainerPort>1194</ContainerPort>
+                <Protocol>udp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/openvpn-as" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/openvpn-as</Config>
+    <Config Name="Port" Target="943" Default="943" Mode="tcp" Description="Container Port: 943" Type="Port" Display="always" Required="false" Mask="false">943</Config>
+    <Config Name="Port" Target="9443" Default="9443" Mode="tcp" Description="Container Port: 9443" Type="Port" Display="always" Required="false" Mask="false">9443</Config>
+    <Config Name="Port" Target="1194" Default="1194" Mode="udp" Description="Container Port: 1194" Type="Port" Display="always" Required="false" Mask="false">1194</Config>
+    <Config Name="PUID" Target="PUID" Default="100" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="PGID" Target="PGID" Default="1000" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+    <Config Name="INTERFACE" Target="INTERFACE" Default="bond0" Mode="" Description="Container Variable: INTERFACE" Type="Variable" Display="always" Required="false" Mask="false">bond0</Config>
+</Container>
