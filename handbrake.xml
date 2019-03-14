@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <TemplateURL>https://raw.githubusercontent.com/eisagholi/test/master/handbrake.xml</TemplateURL>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video</Category>
+    <Name>handbrake</Name>
+    <Support>https://github.com/eisagholi/docker-templates/issues</Support>
+    <Overview>HandBrake is a tool for converting video from nearly any format to a selection of modern, widely supported codecs.</Overview>
+    <Registry>https://hub.docker.com/r/jlesage/handbrake</Registry>
+    <Repository>jlesage/handbrake</Repository>
+    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/handbrake_icon.png</Icon>
+    <Privileged>false</Privileged>
+    <BindTime>true</BindTime>
+    <WebUI>http://[IP]</WebUI>
+    <Network>bridge</Network>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/handbrake" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/handbrake</Config>
+    <Config Name="Home Folder Path" Target="/storage" Default="/mnt/user/" Mode="ro" Description="Container Path: /storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/</Config>
+    <Config Name="Usenet Watch Folder Path" Target="/watch" Default="/mnt/user/downloads/usenet/completed" Mode="rw" Description="Container Path: /watch" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/downloads/usenet/completed</Config>
+    <Config Name="Media Processing Folder Path" Target="/output" Default="/mnt/user/downloads/media_postprocessing" Mode="rw" Description="Container Path: /output" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/downloads/media_postprocessing</Config>
+    <Config Name="USER_ID" Target="USER_ID" Default="100" Mode="" Description="Container Variable: USER_ID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="GROUP_ID" Target="GROUP_ID" Default="1000" Mode="" Description="Container Variable: GROUP_ID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+    <Config Name="AUTOMATED_CONVERSION_PRESET" Target="AUTOMATED_CONVERSION_PRESET" Default="myh265" Mode="" Description="Container Variable: AUTOMATED_CONVERSION_PRESET" Type="Variable" Display="always" Required="false" Mask="false">myh265</Config>
+    <Config Name="AUTOMATED_CONVERSION_FORMAT" Target="AUTOMATED_CONVERSION_FORMAT" Default="mkv" Mode="" Description="Container Variable: AUTOMATED_CONVERSION_FORMAT" Type="Variable" Display="always" Required="false" Mask="false">mkv</Config>
+    <Config Name="AUTOMATED_CONVERSION_KEEP_SOURCE" Target="AUTOMATED_CONVERSION_KEEP_SOURCE" Default="0" Mode="" Description="Container Variable: AUTOMATED_CONVERSION_KEEP_SOURCE" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+    <Config Name="AUTOMATED_CONVERSION_OUTPUT_SUBDIR" Target="AUTOMATED_CONVERSION_OUTPUT_SUBDIR" Default="SAME_AS_SRC" Mode="" Description="Container Variable: AUTOMATED_CONVERSION_OUTPUT_SUBDIR" Type="Variable" Display="always" Required="false" Mask="false">SAME_AS_SRC</Config>
+    <Config Name="traefik enable" Target="traefik.enable" Default="" Mode="" Description="Container Variable: traefik.enable" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
+    <Config Name="traefik backend" Target="traefik.backend" Default="" Mode="" Description="Container Label: traefik.backend" Type="Label" Display="advanced" Required="false" Mask="false">handbrake</Config>
+    <Config Name="traefik port" Target="traefik.port" Default="" Mode="" Description="Container Label: traefik.port" Type="Label" Display="advanced" Required="false" Mask="false">5800</Config>
+    <Config Name="traefik network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="advanced" Required="false" Mask="false">bridge</Config>
+    <Config Name="traefik frontend rule" Target="traefik.frontend.rule" Default="" Mode="" Description="Container Label: traefik.frontend.rule" Type="Label" Display="advanced" Required="false" Mask="false">Host:handbrake.domain</Config>
+    <Config Name="traefik.frontend.headers.SSLHost" Target="traefik.frontend.headers.SSLHost" Default="" Mode="" Description="Container Label: traefik.frontend.headers.SSLHost" Type="Label" Display="advanced" Required="false" Mask="false">domain</Config>
+    <Config Name="traefik.frontend.headers.SSLRedirect" Target="traefik.frontend.headers.SSLRedirect" Default="" Mode="" Description="Container Label: traefik.frontend.headers.SSLRedirect" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.frontend.headers.STSSeconds" Target="traefik.frontend.headers.STSSeconds" Default="" Mode="" Description="Container Label: traefik.frontend.headers.STSSeconds" Type="Label" Display="advanced" Required="false" Mask="false">315360000</Config>
+    <Config Name="traefik.frontend.headers.browserXSSFilter" Target="traefik.frontend.headers.browserXSSFilter" Default="" Mode="" Description="Container Label: traefik.frontend.headers.browserXSSFilter" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.frontend.headers.contentTypeNosniff" Target="traefik.frontend.headers.contentTypeNosniff" Default="" Mode="" Description="Container Label: traefik.frontend.headers.contentTypeNosniff" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.frontend.headers.forceSTSHeader" Target="traefik.frontend.headers.forceSTSHeader" Default="" Mode="" Description="Container Label: traefik.frontend.headers.forceSTSHeader" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.frontend.headers.STSIncludeSubdomains" Target="traefik.frontend.headers.STSIncludeSubdomains" Default="" Mode="" Description="Container Label: traefik.frontend.headers.STSIncludeSubdomains" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.frontend.headers.STSPreload" Target="traefik.frontend.headers.STSPreload" Default="" Mode="" Description="Container Label: traefik.frontend.headers.STSPreload" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.frontend.whiteList.sourceRange" Target="traefik.frontend.whiteList.sourceRange" Default="" Mode="" Description="Container Label: traefik.frontend.whiteList.sourceRange" Type="Label" Display="advanced" Required="false" Mask="false">10.0.0.0/8,172.16.0.0/12,192.168.0.0/16</Config>
+</Container>
