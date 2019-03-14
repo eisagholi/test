@@ -11,7 +11,7 @@
     <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/ombi_icon.png</Icon>
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
-    <WebUI>http://[IP]</WebUI>
+    <WebUI></WebUI>
     <Network>bridge</Network>
     <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/ombi" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ombi</Config>
     <Config Name="PUID" Target="PUID" Default="100" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
