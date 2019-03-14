@@ -11,7 +11,7 @@
     <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/lidarr_icon.png</Icon>
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
-    <WebUI>http://[IP]</WebUI>
+    <WebUI></WebUI>
     <Network>bridge</Network>
     <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/lidarr" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/lidarr</Config>
     <Config Name="Downloads Host Path" Target="/downloads" Default="" Mode="rw" Description="Container Path: /downloads/completed/Music" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/usenet/completed/Music</Config>
