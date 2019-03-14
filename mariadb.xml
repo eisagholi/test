@@ -11,7 +11,7 @@
     <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/mariadb_icon.png</Icon>
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
-    <WebUI>http://[IP]</WebUI>
+    <WebUI></WebUI>
     <Networking>
         <Mode>bridge</Mode>
         <Publish>
