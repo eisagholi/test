@@ -26,7 +26,7 @@
     </Networking>
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
-    <WebUI>http://[IP]</WebUI>
+    <WebUI></WebUI>
     <Config Name="AppData Config Path" Target="/etc/traefik" Default="/mnt/user/appdata/traefik" Mode="rw" Description="Container Path: /etc/traefik" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/traefik</Config>
     <Config Name="Docker Path" Target="/var/run/docker.sock" Default="" Mode="ro" Description="Container Path: /var/run/docker.sock" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
     <Config Name="CLOUDFLARE EMAIL" Target="CLOUDFLARE_EMAIL" Default="" Mode="" Description="Container Variable: CLOUDFLARE_EMAIL" Type="Variable" Display="always" Required="false" Mask="false"></Config>
