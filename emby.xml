@@ -11,7 +11,7 @@
     <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/emby_icon.png</Icon>
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
-    <WebUI>http://[IP]</WebUI>
+    <WebUI></WebUI>
     <Network>bridge</Network>
     <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/emby" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/emby</Config>
     <Config Name="Media Host Path" Target="/mnt/share1" Default="" Mode="rw" Description="Container Path: /mnt/share1" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/</Config>
