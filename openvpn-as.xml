@@ -8,7 +8,7 @@
     <Overview>OpenVPN Access Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments.</Overview>
     <Registry>https://hub.docker.com/r/linuxserver/openvpn-as/</Registry>
     <Repository>linuxserver/openvpn-as</Repository>
-    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/openvpn-as_icon.png</Icon>
+    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/openvpn_as_icon.png</Icon>
     <Privileged>true</Privileged>
     <BindTime>true</BindTime>
     <WebUI>https://[IP]:[PORT:943]/</WebUI>
