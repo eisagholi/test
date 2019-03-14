@@ -14,7 +14,8 @@
     <WebUI></WebUI>
     <Network>bridge</Network>
     <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/emby" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/emby</Config>
-    <Config Name="Media Host Path" Target="/mnt/share1" Default="" Mode="rw" Description="Container Path: /mnt/share1" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/</Config>
+    <Config Name="Media Host Path" Target="/mnt/share1" Default="" Mode="ro" Description="Container Path: /mnt/share1" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/</Config>
+    <Config Name="Usenet Completed Path" Target="/mnt/share2" Default="" Mode="ro" Description="Container Path: /mnt/share2" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/usenet/completed/</Config>
     <Config Name="PUID" Target="PUID" Default="100" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
     <Config Name="PGID" Target="PGID" Default="1000" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
     <Config Name="traefik enable" Target="traefik.enable" Default="" Mode="" Description="Container Variable: traefik.enable" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
