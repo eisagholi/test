@@ -19,6 +19,7 @@
     <Config Name="traefik enable" Target="traefik.enable" Default="" Mode="" Description="Container Variable: traefik.enable" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
     <Config Name="traefik backend" Target="traefik.backend" Default="" Mode="" Description="Container Label: traefik.backend" Type="Label" Display="advanced" Required="false" Mask="false">collabora</Config>
     <Config Name="traefik port" Target="traefik.port" Default="" Mode="" Description="Container Label: traefik.port" Type="Label" Display="advanced" Required="false" Mask="false">9980</Config>
+    <Config Name="traefik protocol" Target="traefik.protocol" Default="" Mode="" Description="Container Label: traefik.protocol" Type="Label" Display="advanced" Required="false" Mask="false">https</Config>
     <Config Name="traefik network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="advanced" Required="false" Mask="false">bridge</Config>
     <Config Name="traefik frontend rule" Target="traefik.frontend.rule" Default="" Mode="" Description="Container Label: traefik.frontend.rule" Type="Label" Display="advanced" Required="false" Mask="false">Host:editor.domain</Config>
     <Config Name="traefik.frontend.headers.SSLHost" Target="traefik.frontend.headers.SSLHost" Default="" Mode="" Description="Container Label: traefik.frontend.headers.SSLHost" Type="Label" Display="advanced" Required="false" Mask="false">domain</Config>
