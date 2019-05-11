@@ -13,8 +13,9 @@
     <BindTime>true</BindTime>
     <WebUI></WebUI>
     <Network>bridge</Network>
-    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/nextcloud" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/nextcloud</Config>
-    <Config Name="AppData Config Path" Target="/data" Default="/mnt/user/data/nextcloud" Mode="rw" Description="Container Path: /data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/data/nextcloud</Config>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/nextcloud" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/nextcloud</Config>
+    <Config Name="AppData Config Path" Target="/data" Default="/mnt/user/data/nextcloud" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/data/nextcloud</Config>
+    <Config Name="TZ" Target="TZ" Default="" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false"></Config>
     <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
     <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
     <Config Name="traefik enable" Target="traefik.enable" Default="" Mode="" Description="Container Variable: traefik.enable" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
