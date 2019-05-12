@@ -7,7 +7,7 @@
     <Support>https://github.com/eisagholi/docker-templates/issues</Support>
     <Overview>ClamAV daemon as a Docker image. It builds with a current virus database and runs freshclam in the background constantly updating the virus signature database. clamd itself is listening on exposed port 3310.</Overview>
     <Registry>https://hub.docker.com/r/mkodockx/docker-clamav</Registry>
-    <Repository>mkodockx/docker-clamav:alpine</Repository>
+    <Repository>mk0x/docker-clamav:alpine</Repository>
     <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/clamav_icon.png</Icon>
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
