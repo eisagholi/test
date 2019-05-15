@@ -10,7 +10,7 @@
     <Repository>linuxserver/openvpn-as</Repository>
     <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/openvpn_as_icon.png</Icon>
     <BindTime>true</BindTime>
-    <WebUI>https://[IP]:[PORT:943]/</WebUI>
+    <WebUI>https://[IP]:[PORT:9443]/</WebUI>
     <Networking>
         <Mode>host</Mode>
         <Publish>
