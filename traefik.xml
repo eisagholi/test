@@ -29,6 +29,7 @@
             </Port>
         </Publish>
     </Networking>
+    <Extra Parameters>--user="docker:user"</Extra Parameters>
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
     <WebUI></WebUI>
