@@ -8,7 +8,7 @@
     <Overview>Proxy over your Docker socket to restrict which requests it accepts </Overview>
     <Repository>tecnativa/docker-socket-proxy:latest</Repository>
     <Registry>https://hub.docker.com/r/tecnativa/docker-socket-proxy</Registry>
-    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/portainer_icon.png</Icon>
+    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/docker-icon.png</Icon>
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
     <WebUI></WebUI>
