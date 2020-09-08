@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <TemplateURL>https://raw.githubusercontent.com/eisagholi/test/master/docker-socket-proxy.xml</TemplateURL>
+    <Beta>False</Beta>
+    <Category>Network:Management Productivity: Tools:</Category>
+    <Name>Docker Socket Proxy</Name>
+    <Support>https://github.com/eisagholi/docker-templates/issues</Support>
+    <Overview>Proxy over your Docker socket to restrict which requests it accepts </Overview>
+    <Repository>tecnativa/docker-socket-proxy:latest</Repository>
+    <Registry>https://hub.docker.com/r/tecnativa/docker-socket-proxy</Registry>
+    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/portainer_icon.png</Icon>
+    <Privileged>false</Privileged>
+    <BindTime>true</BindTime>
+    <WebUI></WebUI>
+    <Networking>
+        <Mode>dockersocketproxy</Mode>
+        <Publish>
+            <Port>
+                <HostPort>2375</HostPort>
+                <ContainerPort>2375</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="" Mode="rw" Description="Container Path: /var/run/docker.sock" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="UI Port" Target="2375" Default="2375" Mode="tcp" Description="Container Port: 2375" Type="Port" Display="always" Required="false" Mask="false">2375</Config>
+</Container>
