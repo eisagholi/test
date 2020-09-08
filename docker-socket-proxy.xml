@@ -24,4 +24,5 @@
     </Networking>
     <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="" Mode="rw" Description="Container Path: /var/run/docker.sock" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
     <Config Name="UI Port" Target="2375" Default="2375" Mode="tcp" Description="Container Port: 2375" Type="Port" Display="always" Required="false" Mask="false">2375</Config>
+    <Config Name="CONTAINERS" Target="CONTAINERS" Default="1" Mode="" Description="Container Variable: CONTAINERS" Type="Variable" Display="always" Required="false" Mask="false">1</Config>
 </Container>
