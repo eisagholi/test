@@ -14,8 +14,8 @@
     <WebUI></WebUI>
     <Network>traefik</Network>
     <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/radarr" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/radarr</Config>
-    <Config Name="Watch Folder Path" Target="/downloads/completed/Movies/" Default="/mnt/user/downloads/media_postprocessing/Movies" Mode="rw" Description="Container Path: /downloads/completed/Movies/" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/downloads/media_postprocessing/Movies</Config>
-    <Config Name="Destination Folder Path" Target="/movies" Default="/mnt/user/media/movies" Mode="rw" Description="Container Path: /movies" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/media/movies</Config>
+    <Config Name="Watch Folder Path" Target="/downloads/completed/Movies/" Default="/mnt/user/downloads/media_postprocessing/Movies" Mode="rw" Description="Container Path: /downloads/completed/Movies/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/media_postprocessing/Movies</Config>
+    <Config Name="Destination Folder Path" Target="/movies" Default="/mnt/user/media/movies" Mode="rw" Description="Container Path: /movies" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/movies</Config>
     <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
     <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
     <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
