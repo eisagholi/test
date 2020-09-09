@@ -12,7 +12,7 @@
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
     <WebUI></WebUI>
-    <Network>bridge</Network>
+    <Network>traefik</Network>
     <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/hydra2" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/hydra2</Config>
     <Config Name="Download Folder Path" Target="/downloads" Default="//mnt/user/downloads/hydra2" Mode="rw" Description="Container Path: /downloads" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/hydra2</Config>
     <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
@@ -21,7 +21,7 @@
     <Config Name="hyda2-rtr.tls" Target="traefik.http.routers.hyda2-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.hyda2-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="hyda2-rtr.entrypoints" Target="traefik.http.routers.hyda2-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.hyda2-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
     <Config Name="hyda2-rtr.rule" Target="traefik.http.routers.hyda2-rtr.rule" Default="Host(`web.example.com`)" Mode="" Description="Container Label: traefik.http.routers.hyda2-rtr.rule" Type="Label" Display="always" Required="false" Mask="false">Host(`search.example.com`)</Config>
-    <Config Name="docker.network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="always" Required="false" Mask="false">bridge</Config>
+    <Config Name="docker.network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="always" Required="false" Mask="false">traefik</Config>
     <Config Name="hyda2-rtr.service" Target="traefik.http.routers.hyda2-rtr.service" Default="hyda2-svc" Mode="" Description="Container Label: traefik.http.routers.hyda2-rtr.service" Type="Label" Display="always" Required="false" Mask="false">hyda2-svc</Config>
     <Config Name="hyda2-svc.loadbalancer.server.port" Target="traefik.http.services.hyda2-svc.loadbalancer.server.port" Default="80" Mode="" Description="Container Label: traefik.http.services.hyda2-svc.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">5076</Config>
     <Config Name="traefik.http.routers.hyda2-rtr.middlewares" Target="traefik.http.routers.hyda2-rtr.middlewares" Default="chain-no-auth@file" Mode="" Description="Container Label: traefik.http.routers.hyda2-rtr.middlewares" Type="Label" Display="always" Required="false" Mask="false">chain-no-auth@file</Config>
