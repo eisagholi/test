@@ -14,8 +14,8 @@
     <WebUI></WebUI>
     <Network>traefik</Network>
     <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/nginx" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/nginx</Config>
-    <Config Name="PUID" Target="PUID" Default="100" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
-    <Config Name="PGID" Target="PGID" Default="1000" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
     <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="nginx-rtr.tls" Target="traefik.http.routers.nginx-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.nginx-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="nginx-rtr.entrypoints" Target="traefik.http.routers.nginx-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.nginx-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
