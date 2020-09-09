@@ -12,19 +12,19 @@
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
     <WebUI></WebUI>
-    <Network>bridge</Network>
+    <Network>traefik</Network>
     <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/emby" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/emby</Config>
     <Config Name="Media Host Path" Target="/mnt/share1" Default="" Mode="ro" Description="Container Path: /mnt/share1" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/</Config>
     <Config Name="Usenet Completed Path" Target="/mnt/share2" Default="" Mode="ro" Description="Container Path: /mnt/share2" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/usenet/completed/</Config>
-    <Config Name="PUID" Target="PUID" Default="100" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
-    <Config Name="PGID" Target="PGID" Default="1000" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
     <Config Name="NVIDIA_VISIBLE_DEVICES" Target="NVIDIA_VISIBLE_DEVICES" Default="GPU device does here" Mode="" Description="Container Variable: NVIDIA_VISIBLE_DEVICES" Type="Variable" Display="always" Required="false" Mask="false">GPU device does here</Config>
     <Config Name="NVIDIA_DRIVER_CAPABILITIES" Target="NVIDIA_DRIVER_CAPABILITIES" Default="all" Mode="" Description="Container Variable: NVIDIA_DRIVER_CAPABILITIES" Type="Variable" Display="always" Required="false" Mask="false">all</Config>
     <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="emby-rtr.tls" Target="traefik.http.routers.emby-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.emby-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="emby-rtr.entrypoints" Target="traefik.http.routers.emby-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.emby-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
     <Config Name="emby-rtr.rule" Target="traefik.http.routers.emby-rtr.rule" Default="Host(`emby.example.com`)" Mode="" Description="Container Label: traefik.http.routers.emby-rtr.rule" Type="Label" Display="always" Required="false" Mask="false">Host(`emby.example.com`)</Config>
-    <Config Name="docker.network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="always" Required="false" Mask="false">bridge</Config>
+    <Config Name="docker.network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="always" Required="false" Mask="false">traefik</Config>
     <Config Name="emby-rtr.service" Target="traefik.http.routers.emby-rtr.service" Default="emby-svc" Mode="" Description="Container Label: traefik.http.routers.emby-rtr.service" Type="Label" Display="always" Required="false" Mask="false">emby-svc</Config>
     <Config Name="emby-svc.loadbalancer.server.port" Target="traefik.http.services.emby-svc.loadbalancer.server.port" Default="80" Mode="" Description="Container Label: traefik.http.services.emby-svc.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">8096</Config>
     <Config Name="traefik.http.routers.emby-rtr.middlewares" Target="traefik.http.routers.emby-rtr.middlewares" Default="chain-self-auth@file" Mode="" Description="Container Label: traefik.http.routers.emby-rtr.middlewares" Type="Label" Display="always" Required="false" Mask="false">chain-self-auth@file</Config>
