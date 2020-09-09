@@ -13,7 +13,7 @@
     <BindTime>true</BindTime>
     <WebUI></WebUI>
     <Networking>
-        <Mode>bridge</Mode>
+        <Mode>traefik</Mode>
         <Publish>
             <Port>
                 <HostPort>3306</HostPort>
@@ -22,9 +22,9 @@
             </Port>
         </Publish>
     </Networking>
-    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/mariadb" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/mariadb</Config>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/mariadb" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/mariadb</Config>
     <Config Name="Port" Target="3306" Default="3306" Mode="tcp" Description="Container Port: 3306" Type="Port" Display="always" Required="false" Mask="false">3306</Config>
-    <Config Name="PUID" Target="PUID" Default="100" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-    <Config Name="PGID" Target="PGID" Default="1000" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
     <Config Name="MYSQL_ROOT_PASSWORD" Target="MYSQL_ROOT_PASSWORD" Default="0" Mode="" Description="Container Variable: MYSQL_ROOT_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
 </Container>
