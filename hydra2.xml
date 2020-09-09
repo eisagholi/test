@@ -6,8 +6,8 @@
     <Name>hydra2</Name>
     <Support>https://github.com/eisagholi/docker-templates/issues</Support>
     <Overview>NZBHydra is a meta search for NZB indexers and the "spiritual successor" to NZBmegasearcH. It provides easy access to a number of raw and newznab based indexers.</Overview>
-    <Registry>https://hub.docker.com/r/linuxserver/hydra2/</Registry>
-    <Repository>linuxserver/hydra2</Repository>
+    <Registry>https://hub.docker.com/r/linuxserver/nzbhydra2/</Registry>
+    <Repository>linuxserver/nzbhydra2</Repository>
     <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/hydra_icon.png</Icon>
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
