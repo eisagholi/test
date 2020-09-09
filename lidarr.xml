@@ -16,8 +16,8 @@
     <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/lidarr" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/lidarr</Config>
     <Config Name="Downloads Host Path" Target="/downloads" Default="" Mode="rw" Description="Container Path: /downloads/completed/Music" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/usenet/completed/Music</Config>
     <Config Name="Media Host Path" Target="/music" Default="" Mode="rw" Description="Container Path: /music" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/music</Config>
-    <Config Name="PUID" Target="PUID" Default="100" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-    <Config Name="PGID" Target="PGID" Default="1000" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
     <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="lidarr-rtr.tls" Target="traefik.http.routers.lidarr-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.lidarr-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="lidarr-rtr.entrypoints" Target="traefik.http.routers.lidarr-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.lidarr-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
