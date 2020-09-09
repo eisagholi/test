@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <TemplateURL>https://raw.githubusercontent.com/eisagholi/test/master/lazylibrarian.xml</TemplateURL>
+    <Beta>False</Beta>
+    <Category>Downloaders: MediaApp:Music</Category>
+    <Name>lazylibrarian</Name>
+    <Support>https://github.com/eisagholi/docker-templates/issues</Support>
+    <Overview>LazyLibrarian is a program to follow authors and grab metadata for all your digital reading needs.</Overview>
+    <Repository>linuxserver/lazylibrarian</Repository>
+    <Registry>https://hub.docker.com/r/linuxserver/lazylibrarian/</Registry>
+    <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/lazylibrarian-icon.png</Icon>
+    <Privileged>false</Privileged>
+    <BindTime>true</BindTime>
+    <WebUI></WebUI>
+    <Network>traefik</Network>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/lazylibrarian" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/lazylibrarian</Config>
+    <Config Name="Downloads Host Path" Target="/downloads" Default="" Mode="rw" Description="Container Path: /downloads/completed/Books" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/usenet/completed/Books/</Config>
+    <Config Name="Media Host Path" Target="/books" Default="" Mode="rw" Description="Container Path: /books" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/books</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="lazylibrarian-rtr.tls" Target="traefik.http.routers.lazylibrarian-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.lazylibrarian-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="lazylibrarian-rtr.entrypoints" Target="traefik.http.routers.lazylibrarian-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.lazylibrarian-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+    <Config Name="lazylibrarian-rtr.rule" Target="traefik.http.routers.lazylibrarian-rtr.rule" Default="Host(`lazylibrarian.example.com`)" Mode="" Description="Container Label: traefik.http.routers.lazylibrarian-rtr.rule" Type="Label" Display="always" Required="false" Mask="false">Host(`lazylibrarian.example.com`)</Config>
+    <Config Name="docker.network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="always" Required="false" Mask="false">traefik</Config>
+    <Config Name="lazylibrarian-rtr.service" Target="traefik.http.routers.lazylibrarian-rtr.service" Default="lazylibrarian-svc" Mode="" Description="Container Label: traefik.http.routers.lazylibrarian-rtr.service" Type="Label" Display="always" Required="false" Mask="false">lazylibrarian-svc</Config>
+    <Config Name="lazylibrarian-svc.loadbalancer.server.port" Target="traefik.http.services.lazylibrarian-svc.loadbalancer.server.port" Default="5299" Mode="" Description="Container Label: traefik.http.services.lazylibrarian-svc.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">5299</Config>
+    <Config Name="traefik.http.routers.lazylibrarian-rtr.middlewares" Target="traefik.http.routers.lazylibrarian-rtr.middlewares" Default="chain-no-auth@file" Mode="" Description="Container Label: traefik.http.routers.lazylibrarian-rtr.middlewares" Type="Label" Display="always" Required="false" Mask="false">chain-no-auth@file</Config>
+</Container>
