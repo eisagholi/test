@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <TemplateURL>https://raw.githubusercontent.com/eisagholi/test/master/urbackup.xml</TemplateURL>
+    <Beta>False</Beta>
+    <Category>Network:Web Network:Proxy</Category>
+    <Name>urbackup-server</Name>
+    <Support>https://github.com/eisagholi/docker-templates/issues</Support>
+    <Overview>Image to run UrBackup Server in Docker (https://urbackup.org)   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+    <Registry>https://hub.docker.com/r/uroni/urbackup-server/</Registry>
+    <Repository>uroni/urbackup-server</Repository>
+    <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/urbackup-icon.png</Icon>
+    <Privileged>false</Privileged>
+    <BindTime>true</BindTime>
+    <WebUI></WebUI>
+    <Network>traefik</Network>
+    <Config Name="AppData Config Path" Target="/backups" Default="/mnt/user/UrBackup/backups" Mode="rw" Description="Container Path: /backups" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/UrBackup/backups</Config>
+    <Config Name="AppData Config Path" Target="/var/urbackup" Default="/mnt/user/UrBackup/database" Mode="rw" Description="Container Path: /var/urbackup" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/UrBackup/database</Config>
+    <Config Name="Port 35623:35623" Target="35623" Default="35623" Mode="tcp" Description="Container Port: 35623" Type="Port" Display="always" Required="false" Mask="false">35623</Config>
+    <Config Name="Port 55415:55415" Target="55415" Default="55415" Mode="tcp" Description="Container Port: 55415" Type="Port" Display="always" Required="false" Mask="false">55415</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="urbackup-rtr.tls" Target="traefik.http.routers.urbackup-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.urbackup-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="urbackup-rtr.entrypoints" Target="traefik.http.routers.urbackup-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.urbackup-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+    <Config Name="urbackup-rtr.rule" Target="traefik.http.routers.urbackup-rtr.rule" Default="Host(`urbackup.example.com`)" Mode="" Description="Container Label: traefik.http.routers.urbackup-rtr.rule" Type="Label" Display="always" Required="false" Mask="false">Host(`urbackup.example.com`)</Config>
+    <Config Name="docker.network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="always" Required="false" Mask="false">traefik</Config>
+    <Config Name="urbackup-rtr.service" Target="traefik.http.routers.urbackup-rtr.service" Default="urbackup-svc" Mode="" Description="Container Label: traefik.http.routers.urbackup-rtr.service" Type="Label" Display="always" Required="false" Mask="false">urbackup-svc</Config>
+    <Config Name="urbackup-svc.loadbalancer.server.port" Target="traefik.http.services.urbackup-svc.loadbalancer.server.port" Default="55414" Mode="" Description="Container Label: traefik.http.services.urbackup-svc.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">55414</Config>
+    <Config Name="traefik.http.routers.urbackup-rtr.middlewares" Target="traefik.http.routers.urbackup-rtr.middlewares" Default="chain-no-auth@file" Mode="" Description="Container Label: traefik.http.routers.urbackup-rtr.middlewares" Type="Label" Display="always" Required="false" Mask="false">chain-no-auth@file</Config>
+</Container>
