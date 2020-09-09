@@ -12,7 +12,7 @@
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
     <WebUI></WebUI>
-    <Network>bridge</Network>
+    <Network>traefik</Network>
     <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/sonarr" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/sonarr</Config>
     <Config Name="Watch Folder Path" Target="/downloads/completed/Series/" Default="/mnt/user/downloads/media_postprocessing/Series" Mode="rw" Description="Container Path: /downloads/completed/Series/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/media_postprocessing/Series</Config>
     <Config Name="Destination Folder Path" Target="/tv" Default="/mnt/user/media/tvshows" Mode="rw" Description="Container Path: /tv" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/tvshows</Config>
