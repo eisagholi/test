@@ -12,7 +12,7 @@
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
     <WebUI></WebUI>
-    <Network>bridge</Network>
+    <Network>traefik</Network>
     <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/nginx" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/nginx</Config>
     <Config Name="PUID" Target="PUID" Default="100" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
     <Config Name="PGID" Target="PGID" Default="1000" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
@@ -20,7 +20,7 @@
     <Config Name="nginx-rtr.tls" Target="traefik.http.routers.nginx-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.nginx-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="nginx-rtr.entrypoints" Target="traefik.http.routers.nginx-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.nginx-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
     <Config Name="nginx-rtr.rule" Target="traefik.http.routers.nginx-rtr.rule" Default="Host(`web.example.com`)" Mode="" Description="Container Label: traefik.http.routers.nginx-rtr.rule" Type="Label" Display="always" Required="false" Mask="false">Host(`web.example.com`)</Config>
-    <Config Name="docker.network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="always" Required="false" Mask="false">bridge</Config>
+    <Config Name="docker.network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="always" Required="false" Mask="false">traefik</Config>
     <Config Name="nginx-rtr.service" Target="traefik.http.routers.nginx-rtr.service" Default="nginx-svc" Mode="" Description="Container Label: traefik.http.routers.nginx-rtr.service" Type="Label" Display="always" Required="false" Mask="false">nginx-svc</Config>
     <Config Name="nginx-svc.loadbalancer.server.port" Target="traefik.http.services.nginx-svc.loadbalancer.server.port" Default="80" Mode="" Description="Container Label: traefik.http.services.nginx-svc.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">80</Config>
     <Config Name="traefik.http.routers.nginx-rtr.middlewares" Target="traefik.http.routers.nginx-rtr.middlewares" Default="chain-no-auth@file" Mode="" Description="Container Label: traefik.http.routers.nginx-rtr.middlewares" Type="Label" Display="always" Required="false" Mask="false">chain-no-auth@file</Config>
