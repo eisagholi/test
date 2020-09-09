@@ -13,7 +13,7 @@
     <BindTime>true</BindTime>
     <WebUI></WebUI>
     <Network>traefik</Network>
-    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/emby" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/emby</Config>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/emby" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/emby</Config>
     <Config Name="Media Host Path" Target="/mnt/share1" Default="" Mode="ro" Description="Container Path: /mnt/share1" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/</Config>
     <Config Name="Usenet Completed Path" Target="/mnt/share2" Default="" Mode="ro" Description="Container Path: /mnt/share2" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/usenet/completed/</Config>
     <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
