@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <TemplateURL>https://raw.githubusercontent.com/eisagholi/test/master/mautic.xml</TemplateURL>
+    <Beta>False</Beta>
+    <Category>Network:Web</Category>
+    <Name>mautic</Name>
+    <Support>https://github.com/eisagholi/docker-templates/issues</Support>
+    <Overview>Mautic is an open source marketing automation platform. </Overview>
+    <Registry>https://hub.docker.com/r/mautic/mautic/</Registry>
+    <Repository>mautic/mautic</Repository>
+    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/mautic_icon.png</Icon>
+    <Privileged>false</Privileged>
+    <BindTime>true</BindTime>
+    <WebUI></WebUI>
+    <Network>traefik</Network>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/mautic" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/mautic</Config>
+    <Config Name="MAUTIC_DB_HOST" Target="MAUTIC_DB_HOST" Default="" Mode="" Description="Container Variable: MAUTIC_DB_HOST" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="MAUTIC_DB_USER" Target="MAUTIC_DB_USER" Default="" Mode="" Description="Container Variable: MAUTIC_DB_USER" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="MAUTIC_DB_PASSWORD" Target="MAUTIC_DB_PASSWORD" Default="" Mode="" Description="Container Variable: MAUTIC_DB_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="MAUTIC_DB_NAME" Target="MAUTIC_DB_NAME" Default="" Mode="" Description="Container Variable: MAUTIC_DB_NAME" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="MAUTIC_RUN_CRON_JOBS" Target="MAUTIC_RUN_CRON_JOBS" Default="" Mode="" Description="Container Variable: MAUTIC_RUN_CRON_JOBS" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="PHP_INI_DATE_TIMEZONE" Target="PHP_INI_DATE_TIMEZONE" Default="UTC" Mode="" Description="Container Variable: PHP_INI_DATE_TIMEZONE" Type="Variable" Display="always" Required="false" Mask="false">UTC</Config>
+    <Config Name="PHP_MEMORY_LIMIT" Target="PHP_MEMORY_LIMIT" Default="256M" Mode="" Description="Container Variable: PHP_MEMORY_LIMIT" Type="Variable" Display="always" Required="false" Mask="false">256M</Config>
+    <Config Name="PHP_MAX_UPLOAD" Target="PHP_MAX_UPLOAD" Default="20M" Mode="" Description="Container Variable: PHP_MAX_UPLOAD" Type="Variable" Display="always" Required="false" Mask="false">20M</Config>
+    <Config Name="PHP_MAX_EXECUTION_TIME" Target="PHP_MAX_EXECUTION_TIME" Default="300" Mode="" Description="Container Variable: PHP_MAX_EXECUTION_TIME" Type="Variable" Display="always" Required="false" Mask="false">300</Config>
+    <Config Name="PHP_INI_DATE_TIMEZONE" Target="PHP_INI_DATE_TIMEZONE" Default="UTC" Mode="" Description="Container Variable: PHP_INI_DATE_TIMEZONE" Type="Variable" Display="always" Required="false" Mask="false">UTC</Config>
+    <Config Name="PHP_MEMORY_LIMIT" Target="PHP_MEMORY_LIMIT" Default="256M" Mode="" Description="Container Variable: PHP_MEMORY_LIMIT" Type="Variable" Display="always" Required="false" Mask="false">256M</Config>
+    <Config Name="PHP_MAX_UPLOAD" Target="PHP_MAX_UPLOAD" Default="" Mode="20M" Description="Container Variable: PHP_MAX_UPLOAD" Type="Variable" Display="always" Required="false" Mask="false">20M</Config>
+    <Config Name="PHP_MAX_EXECUTION_TIME" Target="PHP_MAX_EXECUTION_TIME" Default="300" Mode="" Description="Container Variable: PHP_MAX_EXECUTION_TIME" Type="Variable" Display="always" Required="false" Mask="false">300</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="mautic-rtr.tls" Target="traefik.http.routers.mautic-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.mautic-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="mautic-rtr.entrypoints" Target="traefik.http.routers.mautic-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.mautic-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+    <Config Name="mautic-rtr.rule" Target="traefik.http.routers.mautic-rtr.rule" Default="Host(`web.example.com`)" Mode="" Description="Container Label: traefik.http.routers.mautic-rtr.rule" Type="Label" Display="always" Required="false" Mask="false">Host(`mautic.example.com`)</Config>
+    <Config Name="docker.network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="always" Required="false" Mask="false">traefik</Config>
+    <Config Name="mautic-rtr.service" Target="traefik.http.routers.mautic-rtr.service" Default="mautic-svc" Mode="" Description="Container Label: traefik.http.routers.mautic-rtr.service" Type="Label" Display="always" Required="false" Mask="false">mautic-svc</Config>
+    <Config Name="mautic-svc.loadbalancer.server.port" Target="traefik.http.services.mautic-svc.loadbalancer.server.port" Default="80" Mode="" Description="Container Label: traefik.http.services.mautic-svc.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">80</Config>
+    <Config Name="traefik.http.routers.mautic-rtr.middlewares" Target="traefik.http.routers.mautic-rtr.middlewares" Default="chain-no-auth@file" Mode="" Description="Container Label: traefik.http.routers.mautic-rtr.middlewares" Type="Label" Display="always" Required="false" Mask="false">chain-self-auth@file</Config>
+</Container>
