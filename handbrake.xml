@@ -11,24 +11,32 @@
     <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/handbrake_icon.png</Icon>
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
-    <WebUI></WebUI>
+    <WebUI>http://[IP]:[PORT:5800]</WebUI>
     <Network>traefik</Network>
     <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/handbrake" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/handbrake</Config>
     <Config Name="Home Folder Path" Target="/storage" Default="/mnt/user/" Mode="ro" Description="Container Path: /storage" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/</Config>
     <Config Name="Usenet Watch Folder Path" Target="/watch" Default="/mnt/user/downloads/usenet/completed" Mode="rw" Description="Container Path: /watch" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/usenet/completed</Config>
     <Config Name="Media Processing Folder Path" Target="/output" Default="/mnt/user/downloads/media_postprocessing" Mode="rw" Description="Container Path: /output" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/media_postprocessing</Config>
-    <Config Name="USER_ID" Target="USER_ID" Default="1000" Mode="" Description="Container Variable: USER_ID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
-    <Config Name="GROUP_ID" Target="GROUP_ID" Default="100" Mode="" Description="Container Variable: GROUP_ID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="User ID" Target="USER_ID" Default="1000" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">1000</Config>
+    <Config Name="Group ID" Target="GROUP_ID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
     <Config Name="AUTOMATED_CONVERSION_PRESET" Target="AUTOMATED_CONVERSION_PRESET" Default="myh265" Mode="" Description="Container Variable: AUTOMATED_CONVERSION_PRESET" Type="Variable" Display="always" Required="false" Mask="false">myh265</Config>
     <Config Name="AUTOMATED_CONVERSION_FORMAT" Target="AUTOMATED_CONVERSION_FORMAT" Default="mkv" Mode="" Description="Container Variable: AUTOMATED_CONVERSION_FORMAT" Type="Variable" Display="always" Required="false" Mask="false">mkv</Config>
     <Config Name="AUTOMATED_CONVERSION_KEEP_SOURCE" Target="AUTOMATED_CONVERSION_KEEP_SOURCE" Default="1" Mode="" Description="Container Variable: AUTOMATED_CONVERSION_KEEP_SOURCE" Type="Variable" Display="always" Required="false" Mask="false">1</Config>
     <Config Name="AUTOMATED_CONVERSION_OUTPUT_SUBDIR" Target="AUTOMATED_CONVERSION_OUTPUT_SUBDIR" Default="SAME_AS_SRC" Mode="" Description="Container Variable: AUTOMATED_CONVERSION_OUTPUT_SUBDIR" Type="Variable" Display="always" Required="false" Mask="false">SAME_AS_SRC</Config>
-    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
-    <Config Name="handbrake-rtr.tls" Target="traefik.http.routers.handbrake-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.handbrake-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
-    <Config Name="handbrake-rtr.entrypoints" Target="traefik.http.routers.handbrake-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.handbrake-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
-    <Config Name="handbrake-rtr.rule" Target="traefik.http.routers.handbrake-rtr.rule" Default="Host(`handbrake.example.com`)" Mode="" Description="Container Label: traefik.http.routers.handbrake-rtr.rule" Type="Label" Display="always" Required="false" Mask="false">Host(`handbrake.example.com`)</Config>
-    <Config Name="docker.network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="always" Required="false" Mask="false">traefik</Config>
-    <Config Name="handbrake-rtr.service" Target="traefik.http.routers.handbrake-rtr.service" Default="handbrake-svc" Mode="" Description="Container Label: traefik.http.routers.handbrake-rtr.service" Type="Label" Display="always" Required="false" Mask="false">handbrake-svc</Config>
-    <Config Name="handbrake-svc.loadbalancer.server.port" Target="traefik.http.services.handbrake-svc.loadbalancer.server.port" Default="5800" Mode="" Description="Container Label: traefik.http.services.handbrake-svc.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">5800</Config>
-    <Config Name="traefik.http.routers.handbrake-rtr.middlewares" Target="traefik.http.routers.handbrake-rtr.middlewares" Default="chain-no-auth@file" Mode="" Description="Container Label: traefik.http.routers.handbrake-rtr.middlewares" Type="Label" Display="always" Required="false" Mask="false">chain-no-auth@file</Config>
+    <Config Name="Automatic Video Converter: Non-Video File Action" Target="AUTOMATED_CONVERSION_NON_VIDEO_FILE_ACTION" Default="ignore" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">ignore</Config>
+    <Config Name="Umask" Target="UMASK" Default="022" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">022</Config>
+    <Config Name="Niceness (priority)" Target="APP_NICENESS" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="Display Width" Target="DISPLAY_WIDTH" Default="1280" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">1280</Config>
+    <Config Name="Display Height" Target="DISPLAY_HEIGHT" Default="768" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">768</Config>
+    <Config Name="Secure Connection" Target="SECURE_CONNECTION" Default="0" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+    <Config Name="Extra x11vnc Options" Target="X11VNC_EXTRA_OPTS" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="Automatic Video Converter: Non-Video File Extensions" Target="AUTOMATED_CONVERSION_NON_VIDEO_FILE_EXTENSIONS" Default="jpg jpeg bmp png gif txt nfo" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">jpg jpeg bmp png gif txt nfo</Config>
+    <Config Name="Automatic Video Converter: Source File Stable Time" Target="AUTOMATED_CONVERSION_SOURCE_STABLE_TIME" Default="5" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">5</Config>
+    <Config Name="Automatic Video Converter: Minimum Title Duration" Target="AUTOMATED_CONVERSION_SOURCE_MIN_DURATION" Default="10" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">10</Config>
+    <Config Name="Automatic Video Converter: Check Interval" Target="AUTOMATED_CONVERSION_CHECK_INTERVAL" Default="5" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">5</Config>
+    <Config Name="Automatic Video Converter: Number of Watch Folders" Target="AUTOMATED_CONVERSION_MAX_WATCH_FOLDERS" Default="5" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">5</Config>
+    <Config Name="Automatic Video Converter: Disable Progress in GUI" Target="AUTOMATED_CONVERSION_NO_GUI_PROGRESS" Default="0" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+    <Config Name="Automatic Video Converter: Custom HandBrake Arguments" Target="AUTOMATED_CONVERSION_HANDBRAKE_CUSTOM_ARGS" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="Automatic Video Converter: Install Packages" Target="AUTOMATED_CONVERSION_INSTALL_PKGS" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="WEB Port for GUI" Target="5800" Default="7803" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">7803</Config>
 </Container>
