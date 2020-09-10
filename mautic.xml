@@ -8,7 +8,7 @@
     <Overview>Mautic is an open source marketing automation platform. </Overview>
     <Registry>https://hub.docker.com/r/mautic/mautic/</Registry>
     <Repository>mautic/mautic</Repository>
-    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/mautic_icon.png</Icon>
+    <Icon>https://raw.githubusercontent.com/mautic/mautic/staging/media/images/mautic_logo_db64.png</Icon>
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
     <WebUI></WebUI>
