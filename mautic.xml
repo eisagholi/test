@@ -18,7 +18,7 @@
     <Config Name="MAUTIC_DB_USER" Target="MAUTIC_DB_USER" Default="" Mode="" Description="Container Variable: MAUTIC_DB_USER" Type="Variable" Display="always" Required="false" Mask="false"></Config>
     <Config Name="MAUTIC_DB_PASSWORD" Target="MAUTIC_DB_PASSWORD" Default="" Mode="" Description="Container Variable: MAUTIC_DB_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false"></Config>
     <Config Name="MAUTIC_DB_NAME" Target="MAUTIC_DB_NAME" Default="" Mode="" Description="Container Variable: MAUTIC_DB_NAME" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-    <Config Name="MAUTIC_RUN_CRON_JOBS" Target="MAUTIC_RUN_CRON_JOBS" Default="" Mode="" Description="Container Variable: MAUTIC_RUN_CRON_JOBS" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="MAUTIC_RUN_CRON_JOBS" Target="MAUTIC_RUN_CRON_JOBS" Default="true" Mode="" Description="Container Variable: MAUTIC_RUN_CRON_JOBS" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="PHP_INI_DATE_TIMEZONE" Target="PHP_INI_DATE_TIMEZONE" Default="UTC" Mode="" Description="Container Variable: PHP_INI_DATE_TIMEZONE" Type="Variable" Display="always" Required="false" Mask="false">UTC</Config>
     <Config Name="PHP_MEMORY_LIMIT" Target="PHP_MEMORY_LIMIT" Default="256M" Mode="" Description="Container Variable: PHP_MEMORY_LIMIT" Type="Variable" Display="always" Required="false" Mask="false">256M</Config>
     <Config Name="PHP_MAX_UPLOAD" Target="PHP_MAX_UPLOAD" Default="20M" Mode="" Description="Container Variable: PHP_MAX_UPLOAD" Type="Variable" Display="always" Required="false" Mask="false">20M</Config>
