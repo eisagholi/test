@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <TemplateURL>https://raw.githubusercontent.com/eisagholi/test/master/code-server.xml</TemplateURL>
+    <Beta>False</Beta>
+    <Category>Network:Web Network:Proxy</Category>
+    <Name>code-server</Name>
+    <Support>https://github.com/eisagholi/docker-templates/issues</Support>
+    <Overview>Code-server is VS Code running on a remote server, accessible through the browser.[ul][li]Code on your Chromebook, tablet, and laptop with a consistent dev environment.[/li][li]If you have a Windows or Mac workstation, more easily develop for Linux.[/li][li]Take advantage of large cloud servers to speed up tests, compilations, downloads, and more.[/li][li]Preserve battery life when you're on the go.[/li][li]All intensive computation runs on your server.[/li][li]You're no longer running excess instances of Chrome.[/li][/ul[br][br][b][a href="https://github.com/linuxserver/docker-code-server#application-setup"]Click here for first time set up details[/a][/b]</Overview>
+    <Registry>https://hub.docker.com/r/linuxserver/code-server/</Registry>
+    <Repository>linuxserver/code-server</Repository>
+    <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/code-server.png</Icon>
+    <Privileged>false</Privileged>
+    <BindTime>true</BindTime>
+    <WebUI></WebUI>
+    <Network>traefik</Network>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/code-server" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/code-server</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="PASSWORD" Target="PASSWORD" Default="" Mode="" Description="Container Variable: PASSWORD #optional" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="SUDO_PASSWORD" Target="SUDO_PASSWORD" Default="" Mode="" Description="Container Variable: SUDO_PASSWORD #optional" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="code-server-rtr.tls" Target="traefik.http.routers.code-server-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.code-server-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="code-server-rtr.entrypoints" Target="traefik.http.routers.code-server-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.code-server-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+    <Config Name="code-server-rtr.rule" Target="traefik.http.routers.code-server-rtr.rule" Default="Host(`code.example.com`)" Mode="" Description="Container Label: traefik.http.routers.code-server-rtr.rule" Type="Label" Display="always" Required="false" Mask="false">Host(`code.example.com`)</Config>
+    <Config Name="docker.network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="always" Required="false" Mask="false">traefik</Config>
+    <Config Name="code-server-rtr.service" Target="traefik.http.routers.code-server-rtr.service" Default="code-server-svc" Mode="" Description="Container Label: traefik.http.routers.code-server-rtr.service" Type="Label" Display="always" Required="false" Mask="false">code-server-svc</Config>
+    <Config Name="code-server-svc.loadbalancer.server.port" Target="traefik.http.services.code-server-svc.loadbalancer.server.port" Default="8943" Mode="" Description="Container Label: traefik.http.services.code-server-svc.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">8943</Config>
+    <Config Name="traefik.http.routers.code-server-rtr.middlewares" Target="traefik.http.routers.code-server-rtr.middlewares" Default="chain-no-auth@file" Mode="" Description="Container Label: traefik.http.routers.code-server-rtr.middlewares" Type="Label" Display="always" Required="false" Mask="false">chain-no-auth@file</Config>
+</Container>
