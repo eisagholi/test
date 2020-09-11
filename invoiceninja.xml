@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <TemplateURL>https://raw.githubusercontent.com/eisagholi/test/master/invoiceninja.xml</TemplateURL>
+    <Beta>False</Beta>
+    <Category>Network:Web</Category>
+    <Name>invoiceninja</Name>
+    <Support>https://github.com/eisagholi/docker-templates/issues</Support>
+    <Overview> An open-source invoicing and time-tracking app built with Laravel https://www.invoiceninja.com</Overview>
+    <Registry>https://hub.docker.com/r/invoiceninja/invoiceninja/</Registry>
+    <Repository>invoiceninja/invoiceninja</Repository>
+    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/invoiceninja_icon.png</Icon>
+    <Privileged>false</Privileged>
+    <BindTime>true</BindTime>
+    <WebUI></WebUI>
+    <Network>traefik</Network>
+    <Config Name="AppData Public Path" Target="/var/app/public" Default="/mnt/user/appdata/invoiceninja/public" Mode="rw" Description="Container Path: /var/app/public" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/invoiceninja/public</Config>
+    <Config Name="AppData Storage Path" Target="/var/app/storage" Default="/mnt/user/appdata/invoiceninja/storage" Mode="rw" Description="Container Path: /var/app/storage" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/invoiceninja/storage</Config>
+    <Config Name="APP_ENV" Target="APP_ENV" Default="production" Mode="" Description="Container Variable: APP_ENV" Type="Variable" Display="always" Required="false" Mask="false">production</Config>
+    <Config Name="APP_DEBUG" Target="APP_DEBUG" Default="0" Mode="" Description="Container Variable: APP_DEBUG" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+    <Config Name="APP_URL" Target="APP_URL" Default="http://ninja.dev" Mode="" Description="Container Variable: APP_URL" Type="Variable" Display="always" Required="false" Mask="false">http://ninja.dev</Config>
+    <Config Name="APP_KEY" Target="APP_KEY" Default="<INSERT THE GENERATED APPLICATION KEY HERE>" Mode="" Description="Container Variable: APP_KEY" Type="Variable" Display="always" Required="false" Mask="false"><INSERT THE GENERATED APPLICATION KEY HERE></Config>
+    <Config Name="APP_CIPHER" Target="APP_CIPHER" Default="AES-256-CBC" Mode="" Description="Container Variable: APP_CIPHER" Type="Variable" Display="always" Required="false" Mask="false">AES-256-CBC</Config>
+    <Config Name="DB_TYPE" Target="DB_TYPE" Default="mysql" Mode="" Description="Container Variable: DB_TYPE" Type="Variable" Display="always" Required="false" Mask="false">mysql</Config>
+    <Config Name="DB_STRICT" Target="DB_STRICT" Default="false" Mode="" Description="Container Variable: DB_STRICT" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+    <Config Name="DB_HOST" Target="DB_HOST" Default="localhost" Mode="" Description="Container Variable: DB_HOST" Type="Variable" Display="always" Required="false" Mask="false">localhost</Config>
+    <Config Name="DB_DATABASE" Target="DB_DATABASE" Default="ninja" Mode="" Description="Container Variable: DB_DATABASE" Type="Variable" Display="always" Required="false" Mask="false">ninja</Config>
+    <Config Name="DB_USERNAME" Target="DB_USERNAME" Default="ninja" Mode="" Description="Container Variable: DB_USERNAME" Type="Variable" Display="always" Required="false" Mask="false">ninja</Config>
+    <Config Name="DB_PASSWORD" Target="DB_PASSWORD" Default="ninja" Mode="" Description="Container Variable: DB_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">ninja</Config>    
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="invoiceninja-rtr.tls" Target="traefik.http.routers.invoiceninja-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.invoiceninja-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="invoiceninja-rtr.entrypoints" Target="traefik.http.routers.invoiceninja-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.invoiceninja-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+    <Config Name="invoiceninja-rtr.rule" Target="traefik.http.routers.invoiceninja-rtr.rule" Default="Host(`web.example.com`)" Mode="" Description="Container Label: traefik.http.routers.invoiceninja-rtr.rule" Type="Label" Display="always" Required="false" Mask="false">Host(`invoiceninja.example.com`)</Config>
+    <Config Name="docker.network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="always" Required="false" Mask="false">traefik</Config>
+    <Config Name="invoiceninja-rtr.service" Target="traefik.http.routers.invoiceninja-rtr.service" Default="invoiceninja-svc" Mode="" Description="Container Label: traefik.http.routers.invoiceninja-rtr.service" Type="Label" Display="always" Required="false" Mask="false">invoiceninja-svc</Config>
+    <Config Name="invoiceninja-svc.loadbalancer.server.port" Target="traefik.http.services.invoiceninja-svc.loadbalancer.server.port" Default="80" Mode="" Description="Container Label: traefik.http.services.invoiceninja-svc.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">80</Config>
+    <Config Name="traefik.http.routers.invoiceninja-rtr.middlewares" Target="traefik.http.routers.invoiceninja-rtr.middlewares" Default="chain-no-auth@file" Mode="" Description="Container Label: traefik.http.routers.invoiceninja-rtr.middlewares" Type="Label" Display="always" Required="false" Mask="false">chain-self-auth@file</Config>
+</Container>
