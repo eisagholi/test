@@ -13,8 +13,8 @@
     <BindTime>true</BindTime>
     <WebUI></WebUI>
     <Network>traefik</Network>
-    <Config Name="AppData Public Path" Target="/var/app/public" Default="/mnt/user/appdata/invoiceninja/public" Mode="rw" Description="Container Path: /var/app/public" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/invoiceninja/public</Config>
-    <Config Name="AppData Storage Path" Target="/var/app/storage" Default="/mnt/user/appdata/invoiceninja/storage" Mode="rw" Description="Container Path: /var/app/storage" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/invoiceninja/storage</Config>
+    <Config Name="AppData Public Path" Target="/var/www/app/public" Default="/mnt/user/appdata/invoiceninja/public" Mode="rw" Description="Container Path: /var/www/app/public" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/invoiceninja/public</Config>
+    <Config Name="AppData Storage Path" Target="/var/www/app/storage" Default="/mnt/user/appdata/invoiceninja/storage" Mode="rw" Description="Container Path: /var/www/app/storage" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/invoiceninja/storage</Config>
     <Config Name="APP_ENV" Target="APP_ENV" Default="production" Mode="" Description="Container Variable: APP_ENV" Type="Variable" Display="always" Required="false" Mask="false">production</Config>
     <Config Name="APP_DEBUG" Target="APP_DEBUG" Default="0" Mode="" Description="Container Variable: APP_DEBUG" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
     <Config Name="APP_URL" Target="APP_URL" Default="http://ninja.dev" Mode="" Description="Container Variable: APP_URL" Type="Variable" Display="always" Required="false" Mask="false">http://ninja.dev</Config>
