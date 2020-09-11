@@ -18,7 +18,7 @@
     <Config Name="APP_ENV" Target="APP_ENV" Default="production" Mode="" Description="Container Variable: APP_ENV" Type="Variable" Display="always" Required="false" Mask="false">production</Config>
     <Config Name="APP_DEBUG" Target="APP_DEBUG" Default="0" Mode="" Description="Container Variable: APP_DEBUG" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
     <Config Name="APP_URL" Target="APP_URL" Default="http://ninja.dev" Mode="" Description="Container Variable: APP_URL" Type="Variable" Display="always" Required="false" Mask="false">http://ninja.dev</Config>
-    <Config Name="APP_KEY" Target="APP_KEY" Default="<INSERT THE GENERATED APPLICATION KEY HERE>" Mode="" Description="Container Variable: APP_KEY" Type="Variable" Display="always" Required="false" Mask="false"><INSERT THE GENERATED APPLICATION KEY HERE></Config>
+    <Config Name="APP_KEY" Target="APP_KEY" Default="INSERT THE GENERATED APPLICATION KEY HERE" Mode="" Description="Container Variable: APP_KEY" Type="Variable" Display="always" Required="false" Mask="false">INSERT THE GENERATED APPLICATION KEY HERE</Config>
     <Config Name="APP_CIPHER" Target="APP_CIPHER" Default="AES-256-CBC" Mode="" Description="Container Variable: APP_CIPHER" Type="Variable" Display="always" Required="false" Mask="false">AES-256-CBC</Config>
     <Config Name="DB_TYPE" Target="DB_TYPE" Default="mysql" Mode="" Description="Container Variable: DB_TYPE" Type="Variable" Display="always" Required="false" Mask="false">mysql</Config>
     <Config Name="DB_STRICT" Target="DB_STRICT" Default="false" Mode="" Description="Container Variable: DB_STRICT" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
