@@ -8,7 +8,7 @@
     <Overview> An open-source invoicing and time-tracking app built with Laravel https://www.invoiceninja.com</Overview>
     <Registry>https://hub.docker.com/r/invoiceninja/invoiceninja/</Registry>
     <Repository>invoiceninja/invoiceninja</Repository>
-    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/invoiceninja_icon.png</Icon>
+    <Icon>https://raw.githubusercontent.com/hillelcoren/invoice-ninja/master/public/images/round_logo.png</Icon>
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
     <WebUI></WebUI>
