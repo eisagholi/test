@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <TemplateURL>https://raw.githubusercontent.com/eisagholi/test/master/guacamole.xml</TemplateURL>
+    <Beta>False</Beta>
+    <Category>Network:Web Network:Proxy</Category>
+    <Name>guacamole</Name>
+    <Support>https://github.com/eisagholi/docker-templates/issues</Support>
+    <Overview>guacamole is a web server with a strong focus on high concurrency, performance and low memory usage. It can also act as a reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer and an HTTP cache.</Overview>
+    <Registry>https://hub.docker.com/r/guacamole/guacamole</Registry>
+    <Repository>guacamole/guacamole</Repository>
+    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/guacamole_icon.png</Icon>
+    <Privileged>false</Privileged>
+    <BindTime>true</BindTime>
+    <WebUI></WebUI>
+    <Network>traefik</Network>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/guacamole" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/guacamole</Config>
+    <Config Name="GUACD_HOSTNAME" Target="GUACD_HOSTNAME" Default="" Mode="" Description="Container Variable: GUACD_HOSTNAME" Type="Variable" Display="always" Required="false" Mask="false">GUACD_HOSTNAME</Config>
+    <Config Name="MYSQL_HOSTNAME" Target="MYSQL_HOSTNAME" Default="" Mode="" Description="Container Variable: MYSQL_HOSTNAME" Type="Variable" Display="always" Required="false" Mask="false">MYSQL_HOSTNAME</Config>
+    <Config Name="MYSQL_PORT" Target="MYSQL_PORT" Default="" Mode="" Description="Container Variable: MYSQL_PORT" Type="Variable" Display="always" Required="false" Mask="false">3306</Config>
+    <Config Name="MYSQL_DATABASE" Target="MYSQL_DATABASE" Default="" Mode="" Description="Container Variable: MYSQL_DATABASE" Type="Variable" Display="always" Required="false" Mask="false">MYSQL_DATABASE</Config>
+    <Config Name="MYSQL_USER" Target="MYSQL_USER" Default="" Mode="" Description="Container Variable: MYSQL_USER" Type="Variable" Display="always" Required="false" Mask="false">MYSQL_USER</Config>
+    <Config Name="MYSQL_PASSWORD" Target="MYSQL_PASSWORD" Default="" Mode="" Description="Container Variable: MYSQL_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">MYSQL_PASSWORD</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="guacamole-rtr.tls" Target="traefik.http.routers.guacamole-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.guacamole-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="guacamole-rtr.entrypoints" Target="traefik.http.routers.guacamole-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.guacamole-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+    <Config Name="guacamole-rtr.rule" Target="traefik.http.routers.guacamole-rtr.rule" Default="Host(`web.example.com`)" Mode="" Description="Container Label: traefik.http.routers.guacamole-rtr.rule" Type="Label" Display="always" Required="false" Mask="false">Host(`remote.dc.elvisisagholi.com`)</Config>
+    <Config Name="docker.network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="always" Required="false" Mask="false">traefik</Config>
+    <Config Name="guacamole-rtr.service" Target="traefik.http.routers.guacamole-rtr.service" Default="guacamole-svc" Mode="" Description="Container Label: traefik.http.routers.guacamole-rtr.service" Type="Label" Display="always" Required="false" Mask="false">guacamole-svc</Config>
+    <Config Name="guacamole-svc.loadbalancer.server.port" Target="traefik.http.services.guacamole-svc.loadbalancer.server.port" Default="80" Mode="" Description="Container Label: traefik.http.services.guacamole-svc.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">8080</Config>
+    <Config Name="traefik.http.routers.guacamole-rtr.middlewares" Target="traefik.http.routers.guacamole-rtr.middlewares" Default="chain-no-auth@file" Mode="" Description="Container Label: traefik.http.routers.guacamole-rtr.middlewares" Type="Label" Display="always" Required="false" Mask="false">chain-no-auth@file</Config>
+</Container>
