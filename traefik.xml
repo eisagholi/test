@@ -29,7 +29,6 @@
             </Port>
         </Publish>
     </Networking>
-    <Extra Parameters></Extra Parameters>
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
     <WebUI></WebUI>
