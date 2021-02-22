@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <TemplateURL>https://raw.githubusercontent.com/eisagholi/test/master/embystat.xml</TemplateURL>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other, MediaServer:Other</Category>
+    <Name>embystat</Name>
+    <Support>https://github.com/eisagholi/docker-templates/issues</Support>
+    <Overview>Embystat is a personal web server that can calculate all kinds of statistics from your (local) Emby server. Just install this on your server and let him calculate all kinds of fun stuff.</Overview>
+    <Registry>https://hub.docker.com/r/linuxserver/embystat/</Registry>
+    <Repository>linuxserver/embystat</Repository>
+    <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/embystat-logo.png</Icon>
+    <Privileged>false</Privileged>
+    <BindTime>true</BindTime>
+    <WebUI></WebUI>
+    <Network>traefik</Network>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/embystat" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/embystat</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="embystat-rtr.tls" Target="traefik.http.routers.embystat-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.embystat-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="embystat-rtr.entrypoints" Target="traefik.http.routers.embystat-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.embystat-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+    <Config Name="embystat-rtr.rule" Target="traefik.http.routers.embystat-rtr.rule" Default="Host(`embystats.example.com`)" Mode="" Description="Container Label: traefik.http.routers.embystat-rtr.rule" Type="Label" Display="always" Required="false" Mask="false">Host(`search.example.com`)</Config>
+    <Config Name="docker.network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="always" Required="false" Mask="false">traefik</Config>
+    <Config Name="embystat-rtr.service" Target="traefik.http.routers.embystat-rtr.service" Default="embystat-svc" Mode="" Description="Container Label: traefik.http.routers.embystat-rtr.service" Type="Label" Display="always" Required="false" Mask="false">embystat-svc</Config>
+    <Config Name="embystat-svc.loadbalancer.server.port" Target="traefik.http.services.embystat-svc.loadbalancer.server.port" Default="5076" Mode="" Description="Container Label: traefik.http.services.embystat-svc.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">5076</Config>
+    <Config Name="traefik.http.routers.embystat-rtr.middlewares" Target="traefik.http.routers.embystat-rtr.middlewares" Default="chain-no-auth@file" Mode="" Description="Container Label: traefik.http.routers.embystat-rtr.middlewares" Type="Label" Display="always" Required="false" Mask="false">chain-no-auth@file</Config>
+</Container>
