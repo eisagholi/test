@@ -7,13 +7,13 @@
     <Overview>Middleware or standalone app that provides a web-based file manager within a specified directory.</Overview>
     <Registry>https://hub.docker.com/r/filebrowser/filebrowser/</Registry>
     <Repository>filebrowser/filebrowser</Repository>
-    <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/filebrowser_icon.png</Icon>
+    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/filebrowser_icon.png</Icon>
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
     <WebUI></WebUI>
     <Network>traefik</Network>
     <Config Name="DB Path" Target="/db/" Default="/mnt/user/appdata/filebrowser" Mode="rw" Description="Container Path: /db/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/filebrowser</Config>
-    <Config Name="Host 1 Path" Target="/srv/folder name" Default="/mnt/user/path" Mode="rw" Description="Container Path: /srv/folder name" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/path</Config>
+    <Config Name="Host 1 Path" Target="/srv/folder name" Default="" Mode="rw" Description="Container Path: /srv/folder name" Type="Path" Display="always" Required="true" Mask="false"></Config>
     <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="filebrowser-rtr.tls" Target="traefik.http.routers.filebrowser-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.filebrowser-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="filebrowser-rtr.entrypoints" Target="traefik.http.routers.filebrowser-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.filebrowser-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
