@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <TemplateURL>https://raw.githubusercontent.com/eisagholi/test/master/oauth.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Name>oauth</Name>
+  <Support>https://github.com/eisagholi/docker-templates/issues</Support>
+  <Overview>A minimal forward authentication service that provides OAuth/SSO login and authentication for the traefik reverse proxy/load balancer.</Overview>
+  <Registry>https://hub.docker.com/r/thomseddon/traefik-forward-auth/</Registry>
+  <Repository>thomseddon/traefik-forward-auth</Repository>
+  <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/google_icon.png</Icon>
+  <Privileged>false</Privileged>
+  <BindTime>true</BindTime>
+  <WebUI></WebUI>
+  <Network>traefik</Network>
+  <Config Name="AppData Config Path:" Target="/config" Default="/mnt/user/appdata/oauth" Mode="rw" Description="Container Path:/config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/oauth</Config>
+  <Config Name="CLIENT_ID" Target="CLIENT_ID" Default="" Mode="" Description="Container Variable: CLIENT_ID" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="CLIENT_SECRET" Target="CLIENT_SECRET" Default="" Mode="" Description="Container Variable: CLIENT_SECRET" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="SECRET" Target="SECRET" Default="" Mode="" Description="Container Variable: SECRET" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="COOKIE_DOMAIN" Target="COOKIE_DOMAIN" Default="" Mode="" Description="Container Variable: COOKIE_DOMAIN" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="INSECURE_COOKIE" Target="INSECURE_COOKIE" Default="" Mode="" Description="Container Variable: INSECURE_COOKIE" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="URL_PATH" Target="URL_PATH" Default="" Mode="" Description="Container Variable: URL_PATH" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="WHITELIST" Target="WHITELIST" Default="" Mode="" Description="Container Variable: WHITELIST" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="LOG_LEVEL" Target="LOG_LEVEL" Default="" Mode="" Description="Container Variable: LOG_LEVEL" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="LOG_FORMAT" Target="LOG_FORMAT" Default="" Mode="" Description="Container Variable: LOG_FORMAT" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="LIFETIME" Target="LIFETIME" Default="" Mode="" Description="Container Variable: LIFETIME" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="oauth-rtr.tls" Target="traefik.http.routers.oauth-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.oauth-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="oauth-rtr.entrypoints" Target="traefik.http.routers.oauth-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.oauth-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+  <Config Name="oauth-rtr.rule" Target="traefik.http.routers.oauth-rtr.rule" Default="Host(`oauth.example.com`)" Mode="" Description="Container Label: traefik.http.routers.oauth-rtr.rule" Type="Label" Display="always" Required="false" Mask="false">Host(`oauth.example.com`)</Config>
+  <Config Name="docker.network" Target="traefik.docker.network" Default="" Mode="" Description="Container Label: traefik.docker.network" Type="Label" Display="always" Required="false" Mask="false">traefik</Config>
+  <Config Name="oauth-rtr.service" Target="traefik.http.routers.oauth-rtr.service" Default="oauth-svc" Mode="" Description="Container Label: traefik.http.routers.oauth-rtr.service" Type="Label" Display="always" Required="false" Mask="false">oauth-svc</Config>
+  <Config
+    Name="oauth-svc.loadbalancer.server.port"
+    Target="traefik.http.services.oauth-svc.loadbalancer.server.port"
+    Default="4181"
+    Mode=""
+    Description="Container Label: traefik.http.services.oauth-svc.loadbalancer.server.port"
+    Type="Label"
+    Display="always"
+    Required="false"
+    Mask="false">4181</Config>
+  <Config
+    Name="traefik.http.routers.oauth-rtr.middlewares"
+    Target="traefik.http.routers.oauth-rtr.middlewares"
+    Default="chain-oauth@file"
+    Mode=""
+    Description="Container Label: traefik.http.routers.oauth-rtr.middlewares"
+    Type="Label"
+    Display="always"
+    Required="false"
+    Mask="false">chain-oauth@file</Config>
+</Container>
