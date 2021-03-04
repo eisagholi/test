@@ -13,7 +13,10 @@
     <WebUI></WebUI>
     <Network>traefik</Network>
     <Config Name="DB Path" Target="/db/" Default="/mnt/user/appdata/filebrowser" Mode="rw" Description="Container Path: /db/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/filebrowser</Config>
-    <Config Name="Host 1 Path" Target="/srv/folder name" Default="" Mode="rw" Description="Container Path: /srv/folder name" Type="Path" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="Host 1 Path" Target="/srv/path1" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="Host 2 Path" Target="/srv/path2" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="Host 3 Path" Target="/srv/path3" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="Host 4 Path" Target="/srv/path4" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"></Config>
     <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="filebrowser-rtr.tls" Target="traefik.http.routers.filebrowser-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.filebrowser-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="filebrowser-rtr.entrypoints" Target="traefik.http.routers.filebrowser-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.filebrowser-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
