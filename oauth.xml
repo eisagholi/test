@@ -17,12 +17,12 @@
   <Config Name="CLIENT_SECRET" Target="CLIENT_SECRET" Default="" Mode="" Description="Container Variable: CLIENT_SECRET" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="SECRET" Target="SECRET" Default="" Mode="" Description="Container Variable: SECRET" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="COOKIE_DOMAIN" Target="COOKIE_DOMAIN" Default="" Mode="" Description="Container Variable: COOKIE_DOMAIN" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="INSECURE_COOKIE" Target="INSECURE_COOKIE" Default="" Mode="" Description="Container Variable: INSECURE_COOKIE" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="URL_PATH" Target="URL_PATH" Default="" Mode="" Description="Container Variable: URL_PATH" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="INSECURE_COOKIE" Target="INSECURE_COOKIE" Default="false" Mode="" Description="Container Variable: INSECURE_COOKIE" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="URL_PATH" Target="URL_PATH" Default="/_oauth" Mode="" Description="Container Variable: URL_PATH" Type="Variable" Display="always" Required="false" Mask="false">/_oauth</Config>
   <Config Name="WHITELIST" Target="WHITELIST" Default="" Mode="" Description="Container Variable: WHITELIST" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="LOG_LEVEL" Target="LOG_LEVEL" Default="" Mode="" Description="Container Variable: LOG_LEVEL" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="LOG_FORMAT" Target="LOG_FORMAT" Default="" Mode="" Description="Container Variable: LOG_FORMAT" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="LIFETIME" Target="LIFETIME" Default="" Mode="" Description="Container Variable: LIFETIME" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="LOG_LEVEL" Target="LOG_LEVEL" Default="info" Mode="" Description="Container Variable: LOG_LEVEL" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
+  <Config Name="LOG_FORMAT" Target="LOG_FORMAT" Default="text" Mode="" Description="Container Variable: LOG_FORMAT" Type="Variable" Display="always" Required="false" Mask="false">text</Config>
+  <Config Name="LIFETIME" Target="LIFETIME" Default="2592000" Mode="" Description="Container Variable: LIFETIME" Type="Variable" Display="always" Required="false" Mask="false">2592000</Config>
   <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
   <Config Name="oauth-rtr.tls" Target="traefik.http.routers.oauth-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.oauth-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
   <Config Name="oauth-rtr.entrypoints" Target="traefik.http.routers.oauth-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.oauth-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
