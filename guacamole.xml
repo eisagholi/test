@@ -8,7 +8,7 @@
     <Overview>guacamole is a web server with a strong focus on high concurrency, performance and low memory usage. It can also act as a reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer and an HTTP cache.</Overview>
     <Registry>https://hub.docker.com/r/guacamole/guacamole</Registry>
     <Repository>guacamole/guacamole</Repository>
-    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/guacamole_icon.png</Icon>
+    <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/guacd-icon.png</Icon>
     <Privileged>false</Privileged>
     <BindTime>true</BindTime>
     <WebUI></WebUI>
