@@ -16,7 +16,7 @@
     <Config Name="domain" Target="domain" Default="" Mode="" Description="Container Variable: domain" Type="Variable" Display="always" Required="false" Mask="false">nextcloud\\.yourdomain\\.com</Config>
     <Config Name="username" Target="username" Default="" Mode="" Description="Container Variable: username" Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
     <Config Name="password" Target="password" Default="" Mode="" Description="Container Variable: password" Type="Variable" Display="always" Required="false" Mask="false">password</Config>
-    <Config Name="extra_params" Target="extra_params" Default="" Mode="" Description="Container Variable: extra_params" Type="Variable" Display="always" Required="false" Mask="false">--o:ssl.enable=false</Config>
+    <Config Name="extra_params" Target="extra_params" Default="" Mode="" Description="Container Variable: extra_params" Type="Variable" Display="always" Required="false" Mask="false">-o:ssl.enable=false --o:ssl.termination=true</Config>
     <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="collabora-rtr.tls" Target="traefik.http.routers.collabora-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.collabora-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="collabora-rtr.entrypoints" Target="traefik.http.routers.collabora-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.collabora-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
