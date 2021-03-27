@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <TemplateURL>https://raw.githubusercontent.com/eisagholi/test/master/openlitespeed.xml</TemplateURL>
+    <Beta>False</Beta>
+    <Category>Network:Web, Network:Proxy</Category>
+    <Name>openlitespeed</Name>
+    <Support>https://github.com/eisagholi/docker-templates/issues</Support>
+    <Overview>Official build of OpenLiteSpeed, High Performance, HTTP/3 supported, ready to use   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+    <Registry>https://hub.docker.com/r/litespeedtech/openlitespeed</Registry>
+    <Repository>litespeedtech/openlitespeed</Repository>
+    <Icon>https://raw.githubusercontent.com/eisagholi/test/master/img/ols-icon-lg.png</Icon>
+    <Privileged>false</Privileged>
+    <BindTime>true</BindTime>
+    <WebUI>http://[IP]:[PORT:7080]</WebUI>
+    <Network>br0</Network>
+    <MyIP>x.x.x.x</MyIP>
+    <Config Name="AppData Config Path" Target="/usr/local/lsws/conf" Default="/mnt/user/appdata/ols/lsws/conf" Mode="rw" Description="Container Path: /usr/local/lsws/conf" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ols/lsws/conf</Config>
+    <Config Name="Admin Config Path" Target="/usr/local/lsws/admin/conf" Default="/mnt/user/appdata/ols/lsws/admin-conf" Mode="rw" Description="Container Path: /usr/local/lsws/admin/conf" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ols/lsws/admin-conf</Config>
+    <Config Name="Bin Path" Target="/usr/local/bin" Default="/mnt/user/appdata/ols/bin/container" Mode="rw" Description="Container Path: /usr/local/bin" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ols/bin/container</Config>
+    <Config Name="Vhosts Path" Target="/var/www/vhosts/" Default="/mnt/user/appdata/ols/sites" Mode="rw" Description="Container Path: /var/www/vhosts/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ols/sites</Config>
+    <Config Name="Acme Path" Target="/root/.acme.sh/" Default="/mnt/user/appdata/ols/acme" Mode="rw" Description="Container Path: /root/.acme.sh/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ols/acme</Config>
+    <Config Name="Logs Path" Target="/usr/local/lsws/logs/" Default="/mnt/user/appdata/ols/logs" Mode="rw" Description="Container Path: /usr/local/lsws/logs/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ols/logs</Config>
+    <Config Name="WEB Port for GUI" Target="7080" Default="7080" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">7080</Config>
+</Container>
