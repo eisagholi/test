@@ -19,7 +19,7 @@
     <Config Name="Vhosts Path" Target="/var/www/vhosts/" Default="/mnt/user/appdata/ols/sites" Mode="rw" Description="Container Path: /var/www/vhosts/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ols/sites</Config>
     <Config Name="Acme Path" Target="/root/.acme.sh/" Default="/mnt/user/appdata/ols/acme" Mode="rw" Description="Container Path: /root/.acme.sh/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ols/acme</Config>
     <Config Name="Logs Path" Target="/usr/local/lsws/logs/" Default="/mnt/user/appdata/ols/logs" Mode="rw" Description="Container Path: /usr/local/lsws/logs/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ols/logs</Config>
-    <Config Name="WEB Port for GUI" Target="7080" Default="7080" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">7080</Config>
+    <Config Name="WEB Port for GUI" Target="8500" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8500</Config>
     <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="ols-rtr.tls" Target="traefik.http.routers.ols-rtr.tls" Default="true" Mode="" Description="Container Label: traefik.http.routers.ols-rtr.tls" Type="Label" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="ols-rtr.entrypoints" Target="traefik.http.routers.ols-rtr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.ols-rtr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
